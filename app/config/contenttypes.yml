@@ -1,0 +1,520 @@
+# This file defines the contenttypes on the website. See the documentation for
+# details: https://docs.bolt.cm/contenttypes/intro
+
+# The Homepage contenttype is a singleton: There can be only one record of this
+# contenttype.
+
+accueil:
+    name: Accueils
+    singular_name: Accueil
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+            postfix: |
+                The 'Homepage' can contain basic information about the website. This title will be
+                shown on the homepage of the website, as the name implies. To change the
+                <em><strong>name</strong></em> of the site, as is shown in the header, and the tab
+                in the webbrowser, edit <code>sitename:</code> in the configuration file.
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1920x640/?cityscape,landscape,nature/__random__
+        teaser:
+            type: html
+            height: 150px
+        content:
+            type: html
+            height: 300px
+        contentlink:
+            type: text
+            label: Link
+            placeholder: 'contenttype/slug or http://example.org/'
+            postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contenttype/slug combination. Otherwise use a proper URL, like `http://example.org`."
+        slug:
+            type: slug
+            uses: title
+            group: meta
+    viewless: true
+    singleton: true
+    default_status: published
+    icon_many: "fa:home"
+    icon_one: "fa:home"
+
+
+# Pages can be used for the more 'static' pages on your site. This content-type
+# has a 'templateselect' field, which allows you to override the record_template
+# setting for an individual page.
+# The taxonomy for this ContentType is defined as 'groups', which is a so-called
+# "grouping taxonomy". This way you can easily group sets of pages that logically
+# belong together. If your site has a 'services' section, in which you'd like to
+# list the different types of services a company provides, you can group these
+# together.
+
+mimosa:
+    name: Mimosa
+    singular_name: Mimosa
+    fields:
+        titre:
+            type: text
+            class: large
+            group: contenu
+        contenu:
+            type: html
+            height: 300px
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+        template:
+            type: templateselect
+            filter: '*.twig'
+        title_bs:
+            type: text
+            class: large
+            label: 'Titre Basse Saison'
+            group: Basse saison
+        content_bs:
+            type: html
+            height: 300px
+            label: 'Contenu Basse Saison'
+        mois_bs:
+            type: text
+            class: large
+            label: 'Mois Basse Saison'
+        prix_bs:
+            type: text
+            class: large
+            label: 'Prix Basse Saison'
+        desc_bs_1:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 1'
+        desc_bs_2:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 2'
+        desc_bs_3:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 3'
+        desc_bs_4:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 4'
+        title_ms:
+            type: text
+            class: large
+            label: 'Titre Moyenne Saison'
+            group: Moyenne saison
+        content_ms:
+            type: html
+            height: 300px
+            label: 'Contenu Moyenne Saison'
+        mois_ms:
+            type: text
+            class: large
+            label: 'Mois Moyenne Saison'
+        prix_ms:
+            type: text
+            class: large
+            label: 'Prix Moyenne Saison'
+        desc_ms_1:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 1'
+        desc_ms_2:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 2'
+        desc_ms_3:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 3'
+        desc_ms_4:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 4'
+        title_hs:
+            type: text
+            class: large
+            label: 'Titre Haute Saison'
+            group: Haute saison
+        content_hs:
+            type: html
+            height: 300px
+            label: 'Contenu Haute Saison'
+        mois_hs:
+            type: text
+            class: large
+            label: 'Mois Haute Saison'
+        prix_hs:
+            type: text
+            class: large
+            label: 'Prix Haute Saison'
+        desc_hs_1:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 1'
+        desc_hs_2:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 2'
+        desc_hs_3:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 3'
+        desc_hs_4:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 4'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+    show_in_menu: Gite
+lavande:
+    name: Lavandes
+    singular_name: Lavande
+    fields:
+        titre:
+            type: text
+            class: large
+            group: contenu
+        contenu:
+            type: html
+            height: 300px
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+        template:
+            type: templateselect
+            filter: '*.twig'
+        title_bs:
+            type: text
+            class: large
+            label: 'Titre Basse Saison'
+            group: Basse saison
+        content_bs:
+            type: html
+            height: 300px
+            label: 'Contenu Basse Saison'
+        mois_bs:
+            type: text
+            class: large
+            label: 'Mois Basse Saison'
+        prix_bs:
+            type: text
+            class: large
+            label: 'Prix Basse Saison'
+        desc_bs_1:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 1'
+        desc_bs_2:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 2'
+        desc_bs_3:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 3'
+        desc_bs_4:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 4'
+        title_ms:
+            type: text
+            class: large
+            label: 'Titre Moyenne Saison'
+            group: Moyenne saison
+        content_ms:
+            type: html
+            height: 300px
+            label: 'Contenu Moyenne Saison'
+        mois_ms:
+            type: text
+            class: large
+            label: 'Mois Moyenne Saison'
+        prix_ms:
+            type: text
+            class: large
+            label: 'Prix Moyenne Saison'
+        desc_ms_1:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 1'
+        desc_ms_2:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 2'
+        desc_ms_3:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 3'
+        desc_ms_4:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 4'
+        title_hs:
+            type: text
+            class: large
+            label: 'Titre Haute Saison'
+            group: Haute saison
+        content_hs:
+            type: html
+            height: 300px
+            label: 'Contenu Haute Saison'
+        mois_hs:
+            type: text
+            class: large
+            label: 'Mois Haute Saison'
+        prix_hs:
+            type: text
+            class: large
+            label: 'Prix Haute Saison'
+        desc_hs_1:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 1'
+        desc_hs_2:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 2'
+        desc_hs_3:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 3'
+        desc_hs_4:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 4'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+    show_in_menu: Gite
+lemas:
+    name: LeMas
+    singular_name: LeMass
+    fields:
+        titre:
+            type: text
+            class: large
+            group: contenu
+        contenu:
+            type: html
+            height: 300px
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+        template:
+            type: templateselect
+            filter: '*.twig'
+        title_bs:
+            type: text
+            class: large
+            label: 'Titre Basse Saison'
+            group: Basse saison
+        content_bs:
+            type: html
+            height: 300px
+            label: 'Contenu Basse Saison'
+        mois_bs:
+            type: text
+            class: large
+            label: 'Mois Basse Saison'
+        prix_bs:
+            type: text
+            class: large
+            label: 'Prix Basse Saison'
+        desc_bs_1:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 1'
+        desc_bs_2:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 2'
+        desc_bs_3:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 3'
+        desc_bs_4:
+            type: text
+            class: large
+            label: 'Descriptif Basse Saison ligne 4'
+        title_ms:
+            type: text
+            class: large
+            label: 'Titre Moyenne Saison'
+            group: Moyenne saison
+        content_ms:
+            type: html
+            height: 300px
+            label: 'Contenu Moyenne Saison'
+        mois_ms:
+            type: text
+            class: large
+            label: 'Mois Moyenne Saison'
+        prix_ms:
+            type: text
+            class: large
+            label: 'Prix Moyenne Saison'
+        desc_ms_1:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 1'
+        desc_ms_2:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 2'
+        desc_ms_3:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 3'
+        desc_ms_4:
+            type: text
+            class: large
+            label: 'Descriptif Moyenne Saison ligne 4'
+        title_hs:
+            type: text
+            class: large
+            label: 'Titre Haute Saison'
+            group: Haute saison
+        content_hs:
+            type: html
+            height: 300px
+            label: 'Contenu Haute Saison'
+        mois_hs:
+            type: text
+            class: large
+            label: 'Mois Haute Saison'
+        prix_hs:
+            type: text
+            class: large
+            label: 'Prix Haute Saison'
+        desc_hs_1:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 1'
+        desc_hs_2:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 2'
+        desc_hs_3:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 3'
+        desc_hs_4:
+            type: text
+            class: large
+            label: 'Descriptif Haute Saison ligne 4'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+    show_in_menu: Gite
+activite:
+    name: Activites
+    singular_name: Activite
+    fields:
+        titre:
+            type: text
+            class: large
+            group: content
+        contenu:
+            type: html
+            height: 300px
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+            group: media
+        template:
+            type: templateselect
+            filter: '*.twig'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+contact:
+    name: Contacts
+    singular_name: Contact
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+        teaser:
+            type: html
+            height: 150px
+      
+        body:
+            type: html
+            height: 300px
+        template:
+            type: templateselect
+            filter: '*.twig'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+    show_in_menu: Formulaire
+reservation:
+    name: Reservations
+    singular_name: Reservation
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+        teaser:
+            type: html
+            height: 150px
+      
+        body:
+            type: html
+            height: 300px
+        template:
+            type: templateselect
+            filter: '*.twig'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+    show_in_menu: Formulaire
+diaporama:
+    name: Diaporamas
+    singular_name: Diaporama
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        image:
+            type: image
+            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
+        teaser:
+            type: html
+            height: 150px
+      
+        body:
+            type: html
+            height: 300px
+        template:
+            type: templateselect
+            filter: '*.twig'
+    taxonomy: [ groups ]
+    recordsperpage: 20
+# Entries can be used for things like 'news' or 'blogpostings'. They have a
+# 'teaser', which can be used for a short blurb on listing-pages, allowing
+# visitors to click-through to the rest of the entry. It also has fields for an
+# image and an optional video.
+# A relation is defined to the pages ContentType. This way you can refer to a
+# page from your news-item.
+# This ContentType defines 'categories' and 'tags' as taxonomies, allowing the
+# editor to use both to categorize a specific entry.
+# The 'sort' is set to '-datepublish', which means that newer entries will be
+# shown above older entries.

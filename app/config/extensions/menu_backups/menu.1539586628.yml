@@ -1,0 +1,32 @@
+main:
+    -
+        class: first
+        path: homepage
+        title: 'This is the first menu item.'
+        label: Home
+        submenu:
+            -
+                path: entry/2
+                label: 'Sub 1'
+    -
+        class: last
+        link: 'http://bolt.cm'
+        label: 'The Bolt site'
+    -
+        path: entry/1
+        label: 'Second item'
+        submenu:
+            -
+                path: page/3
+                class: sub-class
+                label: 'Sub 4'
+            -
+                path: entry/3
+                class: menu-item-class
+                label: 'Sub 2'
+            -
+                path: entry/4
+                label: 'Sub 3'
+    -
+        path: pages/
+        label: 'All pages'
